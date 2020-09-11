@@ -1,7 +1,7 @@
 # DevNet_Associate
 
 1.0 Software Development and Design
-  1.1 Compare data formats (XML, JSON, and YAML)
+  \n1.1 Compare data formats (XML, JSON, and YAML)
   1.2 Describe parsing of common data format (XML, JSON, and YAML) to Python data
   structures
   1.3 Describe the concepts of test-driven development
