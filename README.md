@@ -1,10 +1,10 @@
 # DevNet_Associate
 
-1.0 Software Development and Design
-  \n1.1 Compare data formats (XML, JSON, and YAML)
-  1.2 Describe parsing of common data format (XML, JSON, and YAML) to Python data
-  structures
-  1.3 Describe the concepts of test-driven development
+##1.0 Software Development and Design
+  ###1.1 Compare data formats (XML, JSON, and YAML)
+  ###1.2 Describe parsing of common data format (XML, JSON, and YAML) to Python data
+  ###structures
+  ###1.3 Describe the concepts of test-driven development
   1.4 Compare software development methods (agile, lean, and waterfall)
   1.5 Explain the benefits of organizing code into methods / functions, classes, and modules
   1.6 Identify the advantages of common design patterns (MVC and Observer)
