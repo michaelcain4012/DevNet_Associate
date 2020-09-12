@@ -1,0 +1,96 @@
+1.1 Compare data formats (XML, JSON, and YAML)
+
+- These are all encoding schemes
+
+XML (eXtensible Markup Language)
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+   <description>My virtual server test</description>
+   <destination>1.1.1.3:80</destination>
+   <ipProtocol>tcp</ipProtocol>
+   <kind>tm:ltm:virtual:virtualstate</kind>
+   <mask>255.255.255.255</mask>
+   <name>http-virtual</name>
+   <pool>http</pool>
+   <profiles>
+      <element>
+         <kind>ltm:virtual:profile</kind>
+         <name>http</name>
+      </element>
+      <element>
+         <kind>ltm:virtual:profile</kind>
+         <name>tcp</name>
+      </element>
+   </profiles>
+   <sourceAddressTranslation>
+      <type>automap</type>
+   </sourceAddressTranslation>
+</root>
+
+- Each element must have a start-tag and end-tag
+- Can have empty tags (<IPv6></IPv6>)
+- Can use comments same way as HTML (<!-- comment texts -->)
+- Deeper XML Features
+	XPath
+		Uses path like syntax to identify and navigate nodes in an xml doc
+	Attributes and Namespaces
+		Attach metadata to XML using attributes.
+		Elements and attributes can belong to certain namespaces
+			Useful in apps where the same XML doc can be used in diff ways, depending on which rules are applied to the data.
+	XML Schema and DTDs
+		Schema specifies sets of constraints and establish the kind of trees that are acceptable in an XML doc.
+	XSL (eXtensible stylesheet language)
+		Used for data manipulation. Used to transform XML doc into any other format programmatically. Need an XML and XSLT doc to do so.
+
+
+JSON
+{
+ "pool":"http",
+ "description":"My virtual server test",
+ "name":"http-virtual",
+ "mask":"255.255.255.255",
+ "profiles":[
+     {
+         "name":"http",
+         "kind":"ltm:virtual:profile"
+     },
+     {
+         "name":"tcp",
+         "kind":"ltm:virtual:profile"
+     }
+ ],
+ "ipProtocol":"tcp",
+ "sourceAddressTranslation":{"type":"automap"},
+ "kind":"tm:ltm:virtual:virtualstate",
+ "destination":"1.1.1.3:80"
+}
+
+- syntax is same as javascript language
+- Empty values are acceptable!
+
+YAML
+---
+pool: http
+description: My virtual server test
+name: http-virtual
+mask: 255.255.255.255
+profiles:
+- name: http
+  kind: ltm:virtual:profile
+- name: tcp
+  kind: ltm:virtual:profile
+ipProtocol: tcp
+sourceAddressTranslation:
+  type: automap
+kind: tm:ltm:virtual:virtualstate
+destination: 1.1.1.3:80
+
+- Utilizes whitespace indentation similar to Python
+- Tab indentations are not allowed. Instead just use spaces
+- key and values separated by colons
+- no quotes necessary since YAML will try to assume data types
+- "-" denotes lists
+- Not a markup language
+- used by openstack and ansible
+- Empty values not acceptable. Instead use ~ or null
+- File always starts with ---

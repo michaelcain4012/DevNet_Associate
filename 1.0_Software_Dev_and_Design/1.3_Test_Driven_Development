@@ -1,0 +1,17 @@
+Descibe the concepts of test-driven Development
+
+Benefits:
+1. Ensures all code has automated tests by using the test-first approach
+2. Ensures all use cases are tested
+
+The process:
+1. Write Tests
+2. Run the tests; they must fail
+3. Write source code
+4. Run all tests; they must pass
+5. Refactor code where necessary
+
+Benefits of refactoring code:
+1. Better code structure: you may find redundancies
+2. Better code readability
+3. Better Design: improved performance or simplification

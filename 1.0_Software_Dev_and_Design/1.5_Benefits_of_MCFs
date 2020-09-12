@@ -1,0 +1,16 @@
+Benefits of functions, classes, and modules
+
+- First, Modules include Classes which include functions
+
+benefits
+- Makes testing easier
+- improves readability
+- eliminates redundancies
+- Modularity (ability to reuse the code for other things)
+
+Things to be aware of:
+- avoid cyclic dependencies where two module rely on eachother for something
+- You want modules and classes to have loose coupling
+  - Modules, classes and functions should have as few dependencies on other MCFs as possible
+  - 3 parameters to measure this: size (# of relations), visibilty (passing variables in simple way), flexibilty
+- You want to have as strong of cohesion as possible meaning that each MCF has its own clearly defined purpose

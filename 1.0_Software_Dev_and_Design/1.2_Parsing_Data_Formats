@@ -1,0 +1,33 @@
+1.2 Describe parsing of common data format (XML, JSON, and YAML) to Python data structures
+
+YAML
+import yaml
+data = yaml.safe_load(file) to transform .yml to python dict
+yaml.dump(data, file, default_flow_style=False) to reverese that
+
+
+JSON
+import json
+data = json.load(file)
+json.dump(data,file,indent=4) #The indent makes things more readable
+
+
+XML
+2 ways to do this...
+import xml.etree.ElementTree
+mytree = aml.etree.ElementTree.parse(file) #Transforms XML file into python ElementTree instance
+myroot = mytree.getroot()
+
+Then you have to follow this convention:
+user = myroot.find('user')
+
+mytree.write(file, encoding='unicode')
+
+
+import xmltodict (this is closest to what we used with JSON and YAML. Plus this actually puts the data into a python dictionary unlike ElementTree)
+data = xmltodict.parse(file.read())['root']
+xmltodict.unparse(data, file, encoding='unicode')
+
+
+
+For the more in depth stuff refer to the example code 

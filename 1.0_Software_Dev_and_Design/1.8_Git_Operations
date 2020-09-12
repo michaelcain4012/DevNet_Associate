@@ -1,0 +1,79 @@
+1.8 Utilize common version control operations with Git
+
+git clone
+  - clone a local or remote repository
+  Example: git clone http://download-this.com
+
+git add
+  - the changes to your files get moved to the staging area
+  - tracks the files as well
+  Example: git add readme.txt
+
+git rm
+  - opposite of git add
+  - removes file from staging area
+  Example: git rm readme.txt
+
+git status
+  - this command will show the changes to be committed
+  Example: git status
+  Output: On branch amend-my-name
+          Changes to be committed:
+              (use "git reset HEAD <file>..." to unstage)
+
+              modified:   readme.txt
+
+git commit
+  - this command adds the changes you want to commit to the staging area
+  - every commit needs a commit message denoted with a -m
+  Example: git commit -m "added a couple lines of code"
+
+git push
+  - sends the committed changes to the remote repository
+  - if you are pushing changes from the master branch locally to master on Github, you can just use the git push command without parameters
+      - Can also do this if you are pushing changes from a local branch to a branch the already exists at the remote repo
+  - if you are not pushing from the local master branch, you need to tell git where to push to. use the form git push <what to push> <where to push it> (you can use the word 'origin' if you are pushing the branch you are currently in)
+  Example: git push origin master
+
+git pull
+  - incorporates changes from a remote repo into the current branch, just make sure you are in the branch you want the changes to take place in
+Example: git pull
+
+git fetch
+  - the git fetch command does a portion of what the git pull command does
+  - it only downloads the new data but doesn't integrate any of this new data into your files
+  Example: git pull [origin]
+
+git branch
+  - git branch will list all of the branches in your repository
+  - git branch <branch> creates a new branch. note that this does NOT check out the branch
+  - git branch -d <branch> will delete the specified branch. This is the safe option that prevents you from deleting the branch if it has unmerged changes
+  - git branch -D <branch> force deletes the branch even if it has unmerged changes
+  - git branch -m <branch> will rename the current branch you are in to the parameter you give it
+  - git branch -a will list all remote repos
+
+git merge
+  - merge the changes you have made into the branch you are in currently
+  - check get status to see where the head is pointing and which branch it will be merged to
+  Example: git merge <branch name that you want to merge into receiving branch>
+
+CONFLICTS
+  - Happens when 2 people change the same line of code and push changes to repo
+  - When merge conflict occurs it will display:
+      CONFLICT (content): Merge conflict in example.txt
+      Automatic merge failed; fix conflicts and then commit the results
+  - to back out of the merge use git merge --abort
+  - to resolve the issues instead of aborting, make the changes you want. Once complete you'll need to use the git add command to mark the merge conflicts as resolved. Then you will need to commit your changes!
+
+git diff
+  - will show the differences from the files you have (haven't been committed and merged) to the ones that have been pushed
+  - can also do this with just 2 random files if you wanted. to do so use git diff <old branch> <new branch> ./example.txt
+  Example output:
+      diff --git a/diff_test.txt b/diff_test.txt          #Displays input sources of the diff
+      index 6b0c6cf..b37e70a 100644                       #Displays some git metadata that will mean nothing to you
+      --- a/diff_test.txt                                 #these two lines serve as the legend. --- means the file that is in the repo already
+      +++ b/diff_test.txt                                 #+++ means the file you have, that has uncommitted changes
+      @@ -34,6 +34,8 @@                                   #Displays diff chunks always prepended with @@. first parameter is the line where the change starts, second param is the number of lines in the change. the +/- refers to the new or old file
+      -this is a git diff test example                    #Line in the old file
+      +this is a diff example                             #Line in the new file
+      

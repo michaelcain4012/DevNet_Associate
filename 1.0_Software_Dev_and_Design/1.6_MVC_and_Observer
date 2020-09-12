@@ -1,0 +1,25 @@
+Benefits of common design patterns
+
+
+Observer
+- Publisher alerts the observer anytime there is a state change
+- think of this as getting an email every time there is a sale (you are the observer)
+-
+
+
+MVC (Model-View-Controller)
+- View responds to user input. Typically the front end
+- Controller reads input from the view and translates it to the model
+- Controller handles all of the logic (ie validating input)
+- Model is where the data is stored (could be a database)
+
+Benefits of MVC:
+- Separation of concern
+- Multiple views of the same model
+- independent testing of components
+- pluggable components
+
+Cons of MVC:
+- Increased complexity
+- excessing number of change notification
+- view and controller are tightly coupled

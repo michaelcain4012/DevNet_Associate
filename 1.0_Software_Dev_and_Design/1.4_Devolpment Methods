@@ -1,0 +1,51 @@
+Comparing Agile, Lean, and Waterfall
+
+
+
+Agile
+- Utilizes short sprints where goal is to development a functional piece of the product
+- includes customers in the development lifecycle
+- Encourages feedback early on
+- Very open to changes in requirements
+- Scrum is the most popular agile methodology
+- Tasks move from product backlog to sprint backlog
+- Each sprint: analysis->Design->Code->Test
+
+Pros
+- Rapid and continuos delivery
+- people interaction is emphasized
+- late project changes are welcome
+
+Cons
+- Less emphasis on good documentation
+- Customer requirements may be unclear at the beginning
+- Major design changes may occur during the cycle
+
+
+
+Waterfall
+- Linear and sequential approach to Development
+- Phases: requirements/analysis->design->coding->Testing->Maintenance
+- Limits the possibility to freely move between project phases (have to complete one phase before moving onto the next)
+- you are forced to complete a phase before moving forward, with no possibility of going back
+- If anything changes you must go back to the analysis phase and begin again.
+- Testing is left till the end during crunch time (tendency for people to skip out on crucial tests)
+
+Pros
+- Design errors highlighted before any code is written
+- Good documentation is mandatory
+- Easy to measure progress and set milestones
+
+Cons
+- In early stages it can be difficult to gather all requirements
+- inflexible
+- No testing until full product is complete
+
+
+Lean
+- this is more of a concept rather than a methodology
+- if you don't need it, get rid of it
+- 3 major points to fully embrace lean
+  - Purpose
+  - process
+  - People
