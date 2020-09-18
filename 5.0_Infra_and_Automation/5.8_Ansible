@@ -1,0 +1,121 @@
+Ansible
+
+Runs on python.
+
+Need an inventory file.
+Give the devices a group name and specify ip's and host names
+ie
+[ubuntuhosts]
+ubuntu
+
+[Centoshosts]
+Centos
+
+[linuxhosts]
+centos
+ubuntu
+
+
+
+Modules
+Tell ansible to run these scripts
+prebuilt scripts that come with Ansible
+
+
+Playbooks
+Yaml file that talks about what plays to run
+
+---
+- name: Get stats and write to desktop    #Name the Playbook
+  hosts: linuxhosts                       #Identifies the group to perform plays on
+  tasks:
+    - name: get system status and Info                     #Name of task
+      shell: uname -a > /home/mcain/desktop/output.txt     #
+    - name: print my user name                             #Another task
+      shell: whoami >> /home/knox/Desktop/output.txt
+
+
+
+To execute the playbook:
+1. Navigate to the directory of the playbook
+2. use command ansible-playbook {playbook.yml}
+3. this will give you a play recap
+
+
+Variables and Facts use examples
+---
+- name: Playbook with variables demo
+  hosts: linuxhosts
+  vars:
+    - var1: zig
+    - var2: zag
+  tasks:
+    - name: print data
+      shell: echo "{{var1}} when you should {{var2}}" > /home/knox/Desktop/vars.txt
+
+Then run this like any other playbook
+
+Facts demo
+---
+- hosts: ubuntu
+  # facts demo
+  # ansible ubuntu -m setup                   #This command returns all facts of the device
+  # ansible ubuntu -m setup -a "filter=*ansible_os_family"      #These next two return specific facts
+  # ansible ubuntu -m setup -a "filter=*ansible_user_id"
+  tasks:
+    - name: print OS famil to file
+      shell: echo "The family is {{ansible_os_family}}" > /home/{{ansible_user_id}}/Desktop/family.txt
+    - name: Print Default Machine NIC Name to console
+      debug: msg="{{ansible_default_ipv4.interface}}"
+    - name: Register ls results variable
+      command: "ls"
+      register: dirs                                      #register means you are assigning the results to a variable
+    - name: Print dirs variable from the last step to console
+      debug:                                              #debug will print this to your console when you run this playbook
+        msg: "{{dirs}}"
+
+
+Conditional tasks
+---
+- hosts: linuxhosts
+  become: true                          #Tells the playbook to become the administrative account or root user
+  tasks:
+    - name: install nginx on ubuntu
+      apt: name=nginx state=latest
+      #this will generate an error on CenOS
+      ignore_errors:yes                         #ignore errors and move on but register the attempt as results
+      #When it fails, want to store the failure in a variable
+      #for next task to run in case of failure
+      register: results
+
+    - name: install nginx on centos
+      yum: name=nginx state=latest                  #do some task when we specify this condition
+      when: results|failed                          #if the installation failed in the first task, instsall the centos version
+
+If we don't want to deal with errors we can do this instead utilizing facts
+---
+- hosts: linuxhosts
+  become: true
+  tasks:
+    - name: uninstall nginx on ubuntu
+      apt: name=nginx state=absent
+      when: ansible_os_family == "Debian"
+
+    - name: uninstall nginx on centos
+      yum: name=nginx state=absent
+      when: ansible_os_family == "Redhat"
+
+Loops:
+---
+- name: Demo Ansible Loops
+  hosts: ubuntu
+  become: yes
+  tasks:
+    - name: Create a file
+      shell: echo 'Begin file' > /home/knox/Desktop/loops.txt
+    - name: install packages
+      shell: echo "{{item}}" >> /home/knox/Desktop/loops.txt      #For item in items 
+      with_items:
+        - vim
+        - nano
+        - python

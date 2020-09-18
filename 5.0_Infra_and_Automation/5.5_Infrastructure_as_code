@@ -1,0 +1,22 @@
+Infra as code
+
+Rather than config device itself on CLI, deploy config automatically via scripts
+
+Integrate dev and ops efforts
+
+One central repo that determines what is right
+
+Any changes have to be approved from the central repo
+
+
+CICD Pipeline
+
+Source->Build->Test->Production
+
+Continuous integration means all devs commit changes to the same place
+
+Use VIRL to spin up simulated environment
+
+Use pyATS to test this environment
+
+NetDevOps!

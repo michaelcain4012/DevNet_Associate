@@ -1,0 +1,51 @@
+Linux Commands
+
+
+
+pwd - Print the working directory that you are currently in
+  - /home/mcain
+ls - look at contents in current/working directory
+  -Documents  Downloads Pictures
+ls -l - will show all contents in working directory plus more details like permisions, creator, owner, size, date, folder
+cd - move into folder from the working directory
+  - use cd Documents for Example
+cd .. - move back one folder
+cd ../.. - move back two folders
+cd $home - move to root directory
+
+touch {filename}- create a file
+  - ie touch basic.txt
+nano {filename} or vi {filename}- to open a text file
+  -with vi you need to press shift-i before editing
+
+cat {filename} - read contents of a text file
+
+mkdir {foldername} - make new folder
+
+mv {originpath and filename} {destinationpath} - move a file
+  - ie mv ./basic.txt ./demofolder
+  - use ./ to specify to look in your working directory
+
+cp {originpath and filename} {destinationpath} - copy a file
+
+echo {string} - writes out whatever you type to the terminal
+  - Useful for bash scripting, like pulling variables of the system
+  - Also useful for writing to files in ansible
+
+
+Linux file  permissions
+
+Handles permissions with 2 factors
+ 1. Who - Users, groups or other
+ 2. What - Read (4), Write(2), or execute(1) or nothing(0)
+ - give users these numbers to assign their permission level
+ - Each set of -'s represent a group
+ - ie -rw-r--r-- users (us) have read write, groups has read, and Other has read
+
+chmod {value} {filename} - used to change permissions on a file
+  - ie chmod 755 basic.txt changes permisions to -rwxr-xr-x which means users = read,write,execute groups,other = read, execute
+
+
+Interacting with package manager
+- use sudo apt update connects to ubuntu repo and makes sure all sw is up to date, update using sudo apt upgrade
+- install sw using sudo apt install {package}

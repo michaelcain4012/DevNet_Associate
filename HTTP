@@ -1,0 +1,122 @@
+Constuct a REST API requestion to accomplish a task given API decoumentation
+
+
+API - Application programming interface - a way for a computer program to communicate directly with another computer program
+
+RESTful API - an API that follows a specific set of constraints
+- Uniform interface - follow a consistent and decoupled interface for api calls, one uri for any given resource
+- client-server - there must be a decoupled client and server in the implementation architecture
+- stateless - Each API call must have everything needed to perform the requested operation
+- layered
+- cacheable
+- code on demand (optional)
+
+RESTful APIs have either JSON or XML payloads
+
+
+
+REST vs SOAP
+REST is not a protocol. Just a set of guidelines for the structure and organization of an API
+  - Can use JSON, XML, YAML, Markdown, csv, etc.
+SOAP - Simple Object Access Protocol
+  - this is a protocol
+  - more overhead, but more comprehensive
+  - Only uses XML
+  - SOAP requires a verbose XML document. It cannot use just a URL
+
+All HTTP requests and responses are plain-text fromatted comms that follow a specific structure
+
+Example output from GET request on Postman
+GET / HTTP/1.1
+Accept: application/json
+User-Agent: PostmanRuntime/7.26.2
+Postman-Token: 53617535-ec12-4e79-9827-65ea3bf1eb28
+Host: icanhazdadjoke.com
+Accept-Encoding: gzip, deflate, br
+Connection: keep-alive
+
+
+
+HTTP/1.1 200 OK                                                                 #Response
+Date: Sun, 13 Sep 2020 15:03:58 GMT                                             #Headers
+Content-Type: application/json
+Transfer-Encoding: chunked
+Connection: keep-alive
+Set-Cookie: __cfduid=d596ab302ecfea9673fbb4b1469b681a21600009438; expires=Tue, 13-Oct-20 15:03:58 GMT; path=/; domain=.icanhazdadjoke.com; HttpOnly; SameSite=Lax
+Cache-Control: max-age=0, must-revalidate, no-cache, no-store, public, s-maxage=0
+X-Frame-Options: DENY
+X-Xss-Protection: 1; mode=block
+CF-Cache-Status: DYNAMIC
+cf-request-id: 0529979c150000e09a66b14200000001
+Expect-CT: max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+Strict-Transport-Security: max-age=15552000; includeSubDomains
+X-Content-Type-Options: nosniff
+Server: cloudflare
+CF-RAY: 5d22c20cea47e09a-IAD
+Content-Encoding: br
+                                                                                #Always blank line before the body
+{"id":"tcFBIm3gyd","joke":"What's brown and sticky? A stick.","status":200}     #Request body
+
+
+
+Every HTTP request needs a request method which is a single word 'token' that loosely describes the desired action being perfromed
+Methods
+  - GET
+  - HEAD
+  - POST
+  - PUT
+  - PATCH
+  - DELETE
+  -
+
+
+HTTP Response code
+Every HTTP response has a 3-digit numeric code indicationg the type of response. Typically a response note is included with the code
+- 1XX Informational
+- 2XX Successful responses
+  - 200 OK
+- 3XX Redirects
+- 4XX Client errors
+  - 401 Unauthorized
+  - 403 Forbidden
+  - 404 Not found
+  - 405 Method not allowed
+- 5XX Server errors
+
+HTTP Headers
+- Just key:value pairs that contain parameters for the http message
+- Typically determined by the server.
+
+
+HTTP Parameters and Payloads
+- HTTP can use params and payloads to transmit data along with the request by encapsulating it into the body or sending the params in the URL
+
+HTTP Query Strings
+- Always starts with a ? in the URL
+- example.com/submitform?name=mike&addr=123+main+st
+
+Base64 Encoding vs. Encryption
+- Encoding is not Encryption
+  - encoding allows us to transmit binary data over systems that use text-based control
+  - encoding by design is reversible
+- Base64 encoding uses 64 characters to represent data and is considered 'URL safe'
+- Modern HTTP uses the TLS protocol to encrypt data in transit
+  - when TLD is applied to HTTP it is known as https
+
+HTTP Basic Authentication
+- plain text username and password are collected from a user and transmitted to the server in a request header
+  - Typically looks like Authorization: <type> <user:pass>
+  - when using basic authen type will be basic and user:pass will need to be Base64 encoded
+
+API Key Authentication
+- API keys are similar to basic HTTP authen
+- plain test toeken generated, stored in a program and transmitted to the server in a request Headers
+- Looks like Authorization: <type> <token>
+- where type is apikey and a token is just a big long string
+
+Token Authentication
+- most popular, Javascript web token (JWT) most popular form of token
+- stateless authen
+- With JWT, user sends it with ever request
+- Don't have to hit database for each user request
+- can safely distribute requests across many servers 

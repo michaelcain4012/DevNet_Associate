@@ -1,0 +1,13 @@
+Control, management, data plane
+
+Control plane - How to forward
+- Routing protocols
+- mac address table
+- spanning tree protocol
+
+Data Plane - doing the forwarding
+-
+
+
+Management plane - interact with network devices
+- SNMP, NETCONF, SSH

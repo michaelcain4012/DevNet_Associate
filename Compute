@@ -1,0 +1,30 @@
+Cisco compute
+
+
+Intersight is cloud controller to handle UCS servers
+
+UCS manager can manage all UCS platoform (provisioning, policy, monitor)
+  - RPC-based, XML
+  - Also have UCSM SDK
+  - also have powertool which is a powershell module
+  - only cisco hardware specifically
+
+UCS Director
+  - Manage hardware and software from nearly every vendor
+  - Has REST API using XML
+
+
+NSO - Network Services Orchestrator
+  - Cisco's competitor to Ansible and Chef
+  - Build your own network controller from the ground up
+  - Works with anything, even legacy devices
+  - converts configs into YANG data model
+  - components
+    - Service Manager - managers gateway, WLC, Switchconfig
+    - Device Manager - Allows you to configure individual devices
+    -
+
+
+PowerShell
+- Always brings back responses in powershell objects regardless of whether xml, json etc.
+- 

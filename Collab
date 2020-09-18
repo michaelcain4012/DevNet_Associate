@@ -1,0 +1,26 @@
+Collaboration notes
+
+Cisco Unified Comms Mananger
+- Runs VOIP
+- UDS used to see user data usage
+  - REST API that only uses xml
+- To do administrative or config tasks use AXL
+  - Uses xml
+  - SOAP API
+
+CUCM 11.5
+Use SOAPUi for the SOAP Version of Postman
+
+For SOAP API's, similar to RPC's
+specifies method in the tag
+ie
+<getUser>
+  <name>John</name>
+</getUser>
+
+
+
+
+
+Security
+Firepower = NGFW + IPS

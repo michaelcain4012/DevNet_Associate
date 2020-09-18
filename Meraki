@@ -1,0 +1,20 @@
+Meraki
+
+
+Dashboard API - config your network
+scanning api - get metrics on who is in wifi network (ie track cutomer movement)
+captive portal api - guest wifi login
+
+webhooks - We can config meraki to send us an email whenever an interface goes down
+
+You need the API key for authorization!
+
+
+ACI
+3 options for programming ACI
+1.REST API
+2 COBRA SDK - need aci-cobra and aci-model
+3. ACIToolkit
+
+For rest api reference
+hhtps://ip/api/class or managed object/name or DN/json or xml?parameeters

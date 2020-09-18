@@ -1,0 +1,19 @@
+Unit Testing
+
+
+Unittest is the built-in unit testing framework that ships with python
+
+Create test cases by subclassing unittest.TestCase
+
+Define Tests by creating methods beginning with 'Test'
+
+Methods for Unit Testing
+
+assertEqual(a,b)        ->    a==b
+assertNotEqual(a,b)     ->    a!=b
+assertTrue(x)           ->    bool(x) is True
+assertFalse(x)          ->    bool(x) is False
+assertIs(a,b)           ->    a is b
+assertIsNot(a,b)        ->    a is not b
+assertIsNone(x)         ->    x is None
+assertIsNotNone(x)      ->    x is not None

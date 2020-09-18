@@ -1,0 +1,15 @@
+Firewalls
+Different ways to stop traffic from moving from one part of the network to another
+1. Packet filtering - looking for port destination or ip destination or source
+2. Stateful filtering - Remembers the parameters going back and forth accross the firewall
+3. NGFW - Deep packet inspection, see what apps are running
+
+
+
+IDS (Intrusion detection system)
+- detects attack
+- looks for anomalies or bad protocols or signatures (from TALOS) or reputation
+
+
+IPS (Intrusion prevention system)
+- prevents attack from continuing
