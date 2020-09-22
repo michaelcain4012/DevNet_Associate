@@ -1,0 +1,31 @@
+Docker Contents
+
+
+
+FROM
+- All docker files must start with the FROM Command
+- Specifies the parent image to be used
+
+COPY
+- Used to copy files or directories from the builds context into the container
+
+ENV
+- Creates a new environment variable
+- if you want to set value of one variable ENV APP_VERSION 6.3 (without spaces)
+- for multiple ENV APP_VERSION=6.3, APP_NAME="Device Manager"
+
+RUN
+- Used to run a single or multiple commands in a shell in the container to prepare the image
+
+VOLUME
+- Creates a mounting point for persisting data that is consumed by the docker containers
+
+EXPOSE
+- Exposes a TCP or UDP port on which the app running in the container is accessible
+
+CMD
+- Unlike the RUN command, the CMD command does not execute while building the image
+- Insted it specifies what command to execute when a new container is started from this image
+
+WORKDIR
+- Change the working directory

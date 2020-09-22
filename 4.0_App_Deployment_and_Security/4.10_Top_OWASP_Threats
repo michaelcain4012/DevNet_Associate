@@ -1,0 +1,23 @@
+Top OWASP Threats
+
+OWASP - Open Web Application Security Project
+- non-profit charity to make you aware of common threats
+
+Cross-site Scripting (XSS)
+- Injection means when user has to type in an input, attach places code that is sent to the server
+  - Example: Attacker pastes JavaScript code in a forum. When other users access the website, everyone runs the harmful code.
+    - Can be used to get login token
+- To prevent:
+  - Never Insert untrusted data excepted in allowed locations
+  - Make sure you're escaping characters correctly
+  - Sanitize user inputs
+
+SQL Injections
+- Same example as before but attacker puts SQL code that will run in the backend database
+- Prevent by sanitizing inputs, stored procedures, or use prepared statements and specify output data so no sensitive info is leaked
+
+Cross-Site Request Forgery (XSRF)
+- Forges request like you are someone else
+- XSS and SQL can steal data, XSRF can only execure requests on your behalf
+  - ie ordering something on your behalf and changing shipping address or wiring money to the attackers account
+- Prevent using token based syncronization, antiforgery tokens 

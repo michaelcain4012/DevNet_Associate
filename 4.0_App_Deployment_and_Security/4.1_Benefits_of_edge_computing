@@ -1,0 +1,28 @@
+Benefits of Edge Computing
+
+
+Edge computing is a distributed network architecture that moves your compute, storage, comms, control and decision making closer to the network edge or where end users are
+
+Use cases:
+1. Bandwidth reduction
+2. Filtering: Filter only relevant traffic toward your main network
+3. Latency optimization
+4: Partitioning: Balance and allocate resources across the network
+5. Simplified apps
+6. Dynamic Changes: data can be redirected based on content and priority
+7. Analytic support: Data can be used for analytics and higher-level systems
+8. Network efficiency
+
+
+Disadvantages:
+1. Operationally complex due to number of sites
+2. Expensive due to resources for each site
+3. Distribution of security and knowledge
+
+Pros:
+1. Speed/Latency
+2. Privacy - your traffic exists in fewer places
+3. Resiliency - If one location goes down, still have more
+4. Scalability - add more nodes easily
+5. Better network efficiency
+6. Reducing transport costs

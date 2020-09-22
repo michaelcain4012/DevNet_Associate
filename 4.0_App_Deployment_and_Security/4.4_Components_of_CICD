@@ -1,0 +1,48 @@
+Describe components of a CI/CD pipeline in app deployments
+
+CI - Continuous Integration
+Automating the combination of code changes from multiple contributors into a single code base
+CI pipeline:
+1. Source Control
+2. Build Automation
+3. Unit testing
+4. Branch merging
+5. integration testing
+
+CD - Continuous Deployment
+Autmating the delivery of IT services to the users
+CD pipeline:
+1. Central repo
+2. system testing
+3. deployment
+4. user acceptance testing
+
+
+CI/CD pipeline provides single source of tryth for software and apps
+Enables faster feedback
+Also useful for onboarding new engineers
+
+Pipeline consists of:
+1. Source code repo
+2. Build stage (source code, dependecies, static code analytics)
+3. Test stage: (unit and integration tests [end-to-end tests])
+4. Deploy stage : packaging, staging, and production
+
+- pipeline can be triggered manually and scheduled or automated with a commit by a devops engineer
+- Devops engineer commits new code with Git, which then triggers a CI/CD pipeline
+
+
+Good Practices for a CI/CD pipeline:
+- Always use the same environment
+- The master repo should hold only up-to-date, documented, and working code
+- Use code reviews to merge requests to the test and master repos
+- Devs should maintain separate repos
+
+CI/CD pipline tools based on Git and provide a code repo w/ the pipeline
+- GitLab
+- GitHub
+- BitBucket
+
+CI/CD pipline tools based on Git and DO NOT provide a code repo w/ the pipeline
+- Jenkins
+- CircleCI

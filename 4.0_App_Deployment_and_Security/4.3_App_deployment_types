@@ -1,0 +1,31 @@
+Application Deployment Types
+
+Most deployments today are in some sort of virtual environment
+
+Bare-metal
+- Refers to the physical computer components
+- Advantages
+  1. Performance: Physical server resources can be optimized for workload
+  2. Security
+  3. Reliability
+
+
+Virtual Machines
+- Emulation of a computer system running on a shared host
+- Each VM has its own OS, libs, and apps
+- It is not aware of the other VM's on the host
+- Have to use a Hypervisor to manage the VM's
+
+Hypervisor
+- Name of the software that manages virtual environments on the bare metal computer (VMware, VirtualBox, etc)
+- 2 types:
+  Type 1: Runs on the bare metal machine. No underlying OS on the machine
+  Type 2: Has an OS installed on the baremetal computer, the hypervisor runs inside the OS
+
+
+containers
+- Another layer of abstration above virtual machine
+- Share the underlying OS of the machine
+- Usually contains only the dependencies
+- Each container is isolated from each other
+- Advantages: Resource limiting, prioritization (some containers can have more resources than others), Accounting

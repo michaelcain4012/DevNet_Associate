@@ -1,0 +1,28 @@
+Firewalls, DNS, Load Balancers, and reverse proxy in app deployment
+
+
+Firewalls
+- Block filter and monitor HTTP reqs to and from a web app
+- WAF operates on L3 to L7 instead of just L3 and L4 like a normal firewall
+- Does not ensure safe traffic, no protocol inspection, SSL traffic inspection, or any other kind of threat detection.
+- Prevents DDoS and SQL injections
+
+Reverse proxy
+- Reverse proxy server resembles traditional server that fwds requests to a traditional server
+- SSL encryption is usually done on the reverse proxy
+- Can operate as a load balancer
+- Protects against attacks ont he OS and the webserver
+
+Load Balancing
+- optimizes resources, minimizes response time and helps avoid overload
+- Load balanced system can consist of databases, web pages, FTP sites, and DNS servers
+- Different approaches:
+  - Round Robin: selects servers in turns
+  - least connections: selects server with least number of connections
+  - Source algorithms: Looks at users IP and makes sure it connects to the same server
+  - Sticky sessions: Same user connects to the same web sercer when web apps demand so (prevents user from being pushed to new server if that one gets overloaded)
+
+
+DNS
+- Convert hostnames to IP's
+- 

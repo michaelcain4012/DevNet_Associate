@@ -1,0 +1,20 @@
+Deployment Models
+
+
+
+Public cloud
+- leverages publicly available cloud infrastructure over the internet
+- resources are shared between orgs
+- resources owned by service provider
+- Advantages: not capital expenses, no maintenance, scalability, reliability
+
+
+Private cloud
+- Leverage privately-owned infra within an org's network
+- Advantages: Flexibility (customize to your needs), Security, Scalable
+
+
+Hybrid Cloud
+- mix of public and private cloud
+- Offers Cloud bursting which enables orgs to expand services from a private to public cloud in high demand situations
+- Advantage: Cost effective, flexible, control (keep sensitive date in private, other stuff in public)

@@ -1,0 +1,7 @@
+App security issues related to secret protection, encryption (storage and transport). and data handling
+
+Data in motion is data transmitted from device to device.
+- should be encrypted via HTTPS, TLS and so on
+
+Data at rest is data stored on a computer, hard drive, server, etc
+- The data itself should be encrypted or the entire drive should be encrypted

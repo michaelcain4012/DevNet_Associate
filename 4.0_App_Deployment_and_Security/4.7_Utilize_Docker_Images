@@ -1,0 +1,14 @@
+Docker Run instructions
+
+1. Go to directory with the dockerfile
+2. use the command sudo docker build -t dockerfile:latest .
+  - -t tags the command with the latest version
+  - . at the end tells it to look inside the current directory
+3. Run it using sudo docker run -d -p 5000:5000 dockerfile
+  - -d means to run it detached. Don't need to intereact with it
+  - -p x:y port forwarding traffic received on host port x, forward it to container port y
+
+
+See what contains are up and running using sudo docker ps
+If you want to see all containers regardless of whether they are running or not using sudo docker ps -a
+Use sudo docker stop {container ID or container name} to stop a running image

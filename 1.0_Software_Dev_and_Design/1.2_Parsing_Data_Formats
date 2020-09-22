@@ -30,4 +30,46 @@ xmltodict.unparse(data, file, encoding='unicode')
 
 
 
-For the more in depth stuff refer to the example code 
+For the more in depth stuff refer to the example code
+
+
+THE LAMDA FUNCTION
+lamda is a way to define a function in Python
+ie
+doubler = lamda x: x*2
+print(doubler(2))
+# prints 4
+print(doubler(5))
+# prints 10
+
+3 methods to consider with lamda: map, filter, and reduce
+
+map()
+- expects 2 arguments: a function and a list
+- it takes the function and applies it to every item of the list and returns the modified list
+# Double each item of the list
+L = [1, 2, 3, 4, 5, 6]
+doubler = map(lambda x: x*2, L)
+print(list(doubler))
+# Prints [2, 4, 6, 8, 10, 12]
+
+
+filter()
+- expects 2 arguments: a function and a list
+- it takes the function and applies it to every item of the list and returns the modified list with only items that cause the function to return True
+# Filter the values above 18
+age = [5, 11, 16, 19, 24, 42]
+adults = filter(lambda x: x > 18, age)
+print(list(adults))
+# Prints [19, 24, 42]
+
+
+reduce()
+- expects 2 arguments: a function and a list
+- applies a rolling calculation to all items in a list
+- use this to calc the sum or multiply all numbers together
+- This likely won't show up on the test
+L = [10, 20, 30, 40]
+result = reduce(lambda a, b: a + b, L)
+print(result)
+# Prints 100
